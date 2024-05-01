@@ -28,11 +28,8 @@ void biggies(vector<string> &svec, vector<string>::size_type sz){
     elimDups(svec);
     stable_sort(svec.begin(), svec.end(),
                 [](const string &a, const string &b) {return a.size() < b.size();});
-    auto iter = svec.begin();
-    while(iter < svec.end()){
-        if((*iter).size() >= sz) break;
-        ++iter;
-    }
+    auto iter = find_if(svec.begin(), svec.end(),
+                        [sz](const string &s) {return s.size() >= sz;});
     auto count = svec.end() - iter;
     cout << count << " " << make_plural(count, "word", "s") << " of length "  << sz << " or longer : ";
     for_each(iter, svec.end(), [](const string &s){cout << s << " ";});
