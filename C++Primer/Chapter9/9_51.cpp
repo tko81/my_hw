@@ -34,6 +34,7 @@ Date::Date(string &str) {
     } else if (str.find("/") != string::npos) {
         Date::size_type pos = str.find("/");
         Date::size_type pos2 = str.find("/", pos + 1);
+        //Date::size_type pos2 = str.rfind("/");    //从右向左寻找第一个"/"
         year = stoi(str.substr(pos2 + 1));
         month = stoi(str.substr(pos + 1, pos2 - pos - 1));
         day = stoi(str.substr(0, pos));
