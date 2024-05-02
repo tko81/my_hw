@@ -6,7 +6,7 @@
 using namespace std;
 
 int main() {
-    vector<int> vec = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    vector<int> vec = {1, 1, 2, 2, 3, 3, 4, 4, 5, 6, 7, 8, 9};
     list<int> lis;
     //unique_copy(vec.begin(), vec.end(), back_inserter(lis));
     //unique_copy(vec.begin(), vec.end(), front_inserter(lis));
