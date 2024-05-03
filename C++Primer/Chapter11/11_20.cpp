@@ -11,7 +11,7 @@ int main() {
         auto it = word_count.emplace(word, 1);
         //auto it = word_count.insert({word, 1});
         if(!it.second){
-            ++word_count[word];
+            ++it.first->second;
         }
     }
     for(const auto &s : word_count){
