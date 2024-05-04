@@ -26,6 +26,7 @@ void three(){
     }
     cout << endl;
     delete p;
+    p = nullptr;
 }
 
 int main() {
