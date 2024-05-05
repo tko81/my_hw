@@ -43,17 +43,18 @@ void inputTxt(ifstream &ifile){
 void runQueries(ifstream &ifile){
     while(true){
         string target;
-        cout << "plz enter the word you want to search : ";
+        cout << "plz enter the word you want to search (enter \"q\" to quit) : ";
         if(!(cin >> target) || target == "q") break;
         if(cnt.find(target) == cnt.end())
-            cout << "element occurs 0 times" << endl;
+            cout << "\"" << target << "\""<<  " occurs 0 times" << endl;
         else {
-            cout << "element occurs " << cnt[target] << " times" << endl;
+            cout << "\"" << target << "\"" << " occurs " << cnt[target] << " times :" << endl;
             auto it = svc_line.begin();
             for(const auto &i : lines[target]){
-                cout << '\t' << "(line " << i << " ) " << *(it + i) << endl;
+                cout << '\t' << "(line " << i << ") " << *(it + i) << endl;
             }
         }
+        cout << "-----------------" << endl;
     }
 }
 
